@@ -84,7 +84,9 @@ h6 {
 
 body {
     background-image: url(assets/images/hero-bg.jpg);
-    background-size: contain;
+    background-size: cover;
+    height: 100vh;
+    background-position: center -60px;
     background-repeat: no-repeat;
 }
 
@@ -99,7 +101,10 @@ body {
     padding: 0 50px;    
 }
 
-.menu__list {
+/* Menu */
+
+.menu__list,
+.icon__list {
     display: flex;
     font-family: var(--font-sans);
     gap: 5rem;
@@ -111,9 +116,17 @@ body {
     text-decoration: none;
 }
 
-.menu__icons {
-    display: flex;
+/* Menu icons */
+
+.icon__list {
     gap: 1rem;
+}
+
+/* Menu hover effects */
+
+.menu__link:hover,
+.icon__link:hover {
+    border-bottom: 1px solid var(--color-light-green);
 }
 
 /* Hero layout grid */
@@ -128,6 +141,8 @@ body {
 .sunglasses__inner {
     grid-column: inner;
 }
+
+/* HERO SECTION */
 
 /* Hero content */
 
@@ -166,6 +181,7 @@ body {
 .button-green,
 .button-white {
     margin-top: 2rem;
+    margin-bottom: 5rem; /*temp*/
     padding: 15px 50px;
     text-decoration: none;
     border-radius: 5px;
@@ -182,6 +198,8 @@ body {
     border: 1px solid white;
 }
 
+/* Hero buttons hover effects */
+
 .button-green:hover {
     background-color: var(--color-light-green);
 }
@@ -190,3 +208,60 @@ body {
     background-color: var(--color-white);
     color: var(--color-dark-grey);
 }
+
+/* SUNGLASSES SECTION */
+
+.sunglasses {
+    background-color: #d9d9d9;
+}
+
+.best-sellers {
+    margin: 1rem 0;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.swiper-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.sunglasses__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    padding: 25px;
+    background-color: var(--color-white);
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.sunglasses__description {
+    text-align: center;
+}
+
+.sunglasses__name {
+    font-weight: bold;
+}
+
+.sunglasses__price {
+    margin-bottom: 1rem;
+}
+
+.sunglasses__button {
+    padding: 5px 15px;
+    background-color: var(--color-light-green);
+    color: var(--color-white);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Swiper */
+
+/* .swiper-button-prev,
+.swiper-button-next {
+    stroke: var(--color-dark-grey);
+} */
