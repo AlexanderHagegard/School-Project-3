@@ -213,6 +213,7 @@ body {
 
 .sunglasses {
     background-color: #d9d9d9;
+    padding: 20px 0;
 }
 
 .best-sellers {
@@ -221,22 +222,37 @@ body {
     letter-spacing: 3px;
 }
 
-.swiper-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
+.swiper {
+    width: 100%;
+    min-height: 300px;
 }
+
+.swiper-wrapper {
+    margin-bottom: 2rem;
+}
+
+.swiper-slide {
+    display: flex;
+    
+}
+
+.sunglasses__inner {
+    position: relative;
+    --swiper-navigation-sides-offset: -40px;
+    --swiper-navigation-color: var(--color-dark-grey);
+    --swiper-pagination-bottom: 0;
+}
+
 
 .sunglasses__slide {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 400px;
+    justify-content: space-between;
+    /* max-width: 400px; */
+    min-height: 350px;
     padding: 25px;
     background-color: var(--color-white);
     border-radius: 5px;
-    margin: 0 auto;
 }
 
 .sunglasses__description {
@@ -261,7 +277,15 @@ body {
 
 /* Swiper */
 
-/* .swiper-button-prev,
+.swiper-button-prev,
 .swiper-button-next {
     stroke: var(--color-dark-grey);
-} */
+}
+
+.swiper-button-prev {
+    left: -40px;
+}
+
+.swiper-button-next {
+    right: -40px;
+}
