@@ -19,9 +19,9 @@
 
     <!-- Eco Shades JavaScripts -->
     <script src="js/swiper.js" defer></script>
+    <script src="js/menu.js" defer></script>
 </head>
 <body>
-    
     <!-- Header -->
     <header class="site-header">
 
@@ -30,7 +30,7 @@
                 <img src="assets/images/Logo.png" alt="Eco Shades Logo">
             </a>
             
-            <!-- Navigation Menu -->
+            <!-- Menu (Desktop) -->
             <nav class="menu">
                 <ul class="menu__list">
                     <li class="menu__item"><a href="" class="menu__link">Styles</a></li>
@@ -40,7 +40,7 @@
                 </ul>
             </nav>
 
-            <!-- Menu Icons -->
+            <!-- Menu Icons (Desktop)-->
             <div class="icons">
 
                 <ul class="icon__list">
@@ -91,7 +91,80 @@
                 </ul>
 
             </div>
-    </header>
+
+            <!-- Device Menu Button (1024px) -->
+                <button class="menu-button">
+                    <img src="assets/icons/icon-menu.svg" alt="">
+                </button>
+            
+        </header>
+        
+        <!-- Device Menu (1024px) -->
+        <div class="device-menu">
+            <nav class="menu">
+
+                <!-- Menu Icons (Device) -->
+                <div class="icons">
+
+                                    <ul class="icon__list">
+                                        <li class="icon__item">
+                                            <a href="" class="icon__link">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_90_433)">
+                                                    <path d="M10 10C8.625 10 7.44792 9.51042 6.46875 8.53125C5.48958 7.55208 5 6.375 5 5C5 3.625 5.48958 2.44792 6.46875 1.46875C7.44792 0.489584 8.625 0 10 0C11.375 0 12.5521 0.489584 13.5312 1.46875C14.5104 2.44792 15 3.625 15 5C15 6.375 14.5104 7.55208 13.5312 8.53125C12.5521 9.51042 11.375 10 10 10ZM0 20V16.5C0 15.7917 0.1825 15.1404 0.5475 14.5463C0.9125 13.9521 1.39667 13.4992 2 13.1875C3.29167 12.5417 4.60417 12.0571 5.9375 11.7338C7.27083 11.4104 8.625 11.2492 10 11.25C11.375 11.25 12.7292 11.4117 14.0625 11.735C15.3958 12.0583 16.7083 12.5425 18 13.1875C18.6042 13.5 19.0887 13.9533 19.4537 14.5475C19.8187 15.1417 20.0008 15.7925 20 16.5V20H0Z" fill="white"/>
+                                                    </g>
+                                                    <defs>
+                                                    <clipPath id="clip0_90_433">
+                                                    <rect width="20" height="20" fill="white"/>
+                                                    </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </a>
+                                        </li>
+                    
+                                        <li class="icon__item">
+                                            <a href="" class="icon__link">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_90_435)">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.03003 1.06667C6.34036 0.437333 7.00978 0 7.78338 0H12.2166C12.9902 0 13.6585 0.437333 13.97 1.06667C14.7269 1.07307 15.3177 1.10613 15.8452 1.30453C16.475 1.54162 17.0227 1.94455 17.4257 2.4672C17.8324 2.99413 18.0242 3.66933 18.2857 4.5984L19.1081 7.50187L19.4184 8.39893L19.445 8.43093C20.4436 9.66187 19.9681 11.4923 19.0172 15.152C18.4121 17.4805 18.1106 18.6443 17.2085 19.3227C16.3063 20 15.0594 20 12.5657 20H7.43426C4.94056 20 3.69371 20 2.79154 19.3227C1.88938 18.6443 1.58681 17.4805 0.982781 15.152C0.0318505 11.4923 -0.443615 9.66187 0.554973 8.43093L0.581573 8.39893L0.8919 7.50187L1.71427 4.5984C1.97694 3.66933 2.16867 2.99307 2.57432 2.46613C2.97744 1.94387 3.52513 1.54133 4.15477 1.30453C4.68232 1.10613 5.27195 1.072 6.03003 1.06667ZM6.03225 2.6688C5.29854 2.67627 5.00373 2.70293 4.75991 2.79467C4.42072 2.92233 4.12574 3.13932 3.90872 3.4208C3.71366 3.6736 3.5984 4.02667 3.27699 5.1648L2.64525 7.39307C3.77572 7.2 5.32071 7.2 7.43315 7.2H12.5657C14.6793 7.2 16.2232 7.2 17.3536 7.392L16.723 5.16373C16.4016 4.0256 16.2863 3.67253 16.0913 3.41973C15.8743 3.13825 15.5793 2.92126 15.2401 2.7936C14.9963 2.70187 14.7015 2.6752 13.9678 2.66773C13.8104 2.9865 13.5624 3.25581 13.2524 3.44441C12.9425 3.63302 12.5833 3.7332 12.2166 3.73333H7.78338C7.4168 3.7333 7.05774 3.63327 6.74781 3.44486C6.43788 3.25645 6.18977 2.98737 6.03225 2.6688Z" fill="white"/>
+                                                    </g>
+                                                    <defs>
+                                                    <clipPath id="clip0_90_435">
+                                                    <rect width="20" height="20" fill="white"/>
+                                                    </clipPath>
+                                                    </defs>
+                                                </svg>                                
+                                            </a>
+                                        </li>
+                    
+                                        <li class="icon__item">
+                                            <a href="" class="icon__link">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_90_437)">
+                                                    <path d="M13.809 15.3223C12.089 16.6575 9.92474 17.287 7.7569 17.0827C5.58907 16.8783 3.58058 15.8555 2.14028 14.2224C0.699973 12.5892 -0.0638863 10.4686 0.00418848 8.29207C0.0722632 6.11555 0.967155 4.04678 2.5067 2.50686C4.04652 0.967216 6.11516 0.0722678 8.29154 0.00418874C10.4679 -0.0638903 12.5884 0.700018 14.2215 2.14041C15.8545 3.58081 16.8773 5.58943 17.0816 7.7574C17.2859 9.92537 16.6565 12.0897 15.3213 13.8099L19.6585 18.1474C19.7994 18.2782 19.9023 18.4445 19.9566 18.629C20.0108 18.8134 20.0143 19.009 19.9667 19.1952C19.9191 19.3815 19.8221 19.5514 19.686 19.6871C19.5499 19.8229 19.3798 19.9194 19.1934 19.9665C19.0074 20.0142 18.812 20.0109 18.6277 19.9569C18.4434 19.9029 18.2771 19.8003 18.1462 19.6598L13.809 15.3223ZM14.9789 8.55932C14.9916 7.70839 14.835 6.86343 14.5182 6.07359C14.2013 5.28375 13.7306 4.5648 13.1334 3.95856C12.5361 3.35233 11.8243 2.87091 11.0393 2.5423C10.2544 2.2137 9.41189 2.04448 8.56092 2.04448C7.70994 2.04448 6.86746 2.2137 6.08249 2.5423C5.29751 2.87091 4.5857 3.35233 3.98848 3.95856C3.39125 4.5648 2.92053 5.28375 2.60368 6.07359C2.28684 6.86343 2.13021 7.70839 2.14289 8.55932C2.16803 10.245 2.85527 11.8532 4.05614 13.0364C5.25702 14.2195 6.87514 14.8828 8.56092 14.8828C10.2467 14.8828 11.8648 14.2195 13.0657 13.0364C14.2666 11.8532 14.9538 10.245 14.9789 8.55932Z" fill="white"/>
+                                                    </g>
+                                                    <defs>
+                                                    <clipPath id="clip0_90_437">
+                                                    <rect width="20" height="20" fill="white"/>
+                                                    </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                    
+                </div>
+
+                <!-- Device Menu -->
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="" class="menu__link">Styles</a></li>
+                    <li class="menu__item"><a href="" class="menu__link">Shop</a></li>
+                    <li class="menu__item"><a href="" class="menu__link">About</a></li>
+                    <li class="menu__item"><a href="" class="menu__link">Contact</a></li>
+                </ul>
+                
+            </nav>
+        </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -125,7 +198,7 @@
         <!-- Sunglasses inner container -->
         <div class="sunglasses__inner">
 
-            <!-- <div class="best-sellers">BEST SELLERS</div> -->
+            <div class="best-sellers">BEST SELLERS</div>
 
                 <!-- Swiper/Slider -->
 
@@ -155,7 +228,7 @@
                         <div class="swiper-slide">
 
                             <figure class="sunglasses__slide">
-                                <img src="assets/images/glasses2.jpg" alt="Round oversized sunglasses">
+                                <img src="assets/images/glasses4.jpg" alt="Round oversized sunglasses">
                                 <div class="sunglasses__description">
                                     <div class="sunglasses__name">Azure Blossom</div>
                                     <div class="sunglasses__price">€ 84.90</div>
@@ -169,7 +242,7 @@
                         <div class="swiper-slide">
 
                             <figure class="sunglasses__slide">
-                                <img src="assets/images/glasses3.jpg" alt="Cat eye sunglasses">
+                                <img src="assets/images/glasses2.jpg" alt="Cat eye sunglasses">
                                 <div class="sunglasses__description">
                                     <div class="sunglasses__name">Luna Elegance</div>
                                     <div class="sunglasses__price">€ 69.90</div>
@@ -179,14 +252,14 @@
 
                         </div>
 
-                        <!-- Slide 3 -->
+                        <!-- Slide 4 -->
                         <div class="swiper-slide">
 
                             <figure class="sunglasses__slide">
-                                <img src="assets/images/glasses3.jpg" alt="Cat eye sunglasses">
+                                <img src="assets/images/glasses3.jpg" alt="Round green sunglasses">
                                 <div class="sunglasses__description">
-                                    <div class="sunglasses__name">Luna Elegance</div>
-                                    <div class="sunglasses__price">€ 69.90</div>
+                                    <div class="sunglasses__name">Devine Elegance</div>
+                                    <div class="sunglasses__price">€ 79.90</div>
                                     <a href="" class="sunglasses__button">Shop now</a>
                                 </div>
                             </figure>
@@ -196,7 +269,7 @@
                     </div>
 
                 <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
+                <!-- <div class="swiper-pagination"></div> -->
                     
             </div>
                 <!-- If we need navigation buttons -->

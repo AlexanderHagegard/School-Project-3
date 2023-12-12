@@ -38,11 +38,12 @@ img {
 
     /* Font Scale */
     --font-size-1: var(--font-size); /*16px*/
-    --font-size-2: calc(var(--font-size-1 * --font-scale)); /*21.33px*/
-    --font-size-3: calc(var(--font-size-2 * --font-scale)); /*28.43px*/
-    --font-size-4: calc(var(--font-size-3 * --font-scale)); /*37.9px*/
-    --font-size-5: calc(var(--font-size-4 * --font-scale)); /*50.52px*/
-    --font-size-6: calc(var(--font-size-5 * --font-scale)); /*67.34px*/
+    --font-size-2: calc(var(--font-size-1) * var(--font-scale)); /*21.33px*/
+    --font-size-3: calc(var(--font-size-2) * var(--font-scale)); /*28.43px*/
+    --font-size-4: calc(var(--font-size-3) * var(--font-scale)); /*37.9px*/
+    --font-size-5: calc(var(--font-size-4) * var(--font-scale)); /*50.52px*/
+    --font-size-6: calc(var(--font-size-5) * var(--font-scale)); /*67.34px*/
+    --font-size-7: calc(var(--font-size-6) * var(--font-scale)); /*89.76px*/
 }
 
 /* Typography */
@@ -83,22 +84,20 @@ h6 {
 /* Body img */
 
 body {
-    background-image: url(assets/images/hero-bg.jpg);
-    background-size: cover;
-    height: 100vh;
-    background-position: center -60px;
-    background-repeat: no-repeat;
+    background-color: #d9d9d9;
 }
 
 /* Header */
 
 .site-header {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 80px;
-    padding: 0 50px;    
+    padding: 0 50px;
+    z-index: 99;   
 }
 
 /* Menu */
@@ -114,6 +113,7 @@ body {
 .menu__link {
     color: var(--color-white);
     text-decoration: none;
+    transition: all 0.4s;
 }
 
 /* Menu icons */
@@ -122,11 +122,50 @@ body {
     gap: 1rem;
 }
 
+.icon__link {
+    transition: all 0.4s;
+}
+
 /* Menu hover effects */
 
 .menu__link:hover,
 .icon__link:hover {
     border-bottom: 1px solid var(--color-light-green);
+}
+
+/* Device menu (1024px and less) */
+
+.menu-button {
+   display: none;
+}
+
+.device-menu {
+    position: fixed;
+    background-color: var(--color-dark-grey);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 98;
+    display: none;
+}
+
+.device-menu .menu__list {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 3rem;
+}
+
+.device-menu .menu__link {
+    font-size: var(--font-size-2);
+}
+
+.device-menu.open {
+    display: flex;
 }
 
 /* Hero layout grid */
@@ -146,15 +185,23 @@ body {
 
 /* Hero content */
 
+.hero {
+    background-image: url(assets/images/hero-bg.jpg);
+    background-size: cover;
+    background-position: center -60px;
+    background-repeat: no-repeat;
+}
+
 .hero__content {
+    margin: 10rem 2rem;
+    margin-bottom: 5rem;
     max-width: 65rem;
 }
 
 .hero__title {
-    font-size: 89px;
+    font-size: var(--font-size-7);
     color: var(--color-white);
     line-height: 1.4;
-    padding-top: 7.5rem;
     margin: 0;
 }
 
@@ -164,7 +211,7 @@ body {
 }
 
 .hero__ingress {
-    font-size: 21px;
+    font-size: var(--font-size-2);
     color: var(--color-white);
     line-height: 1.5;
     max-width: 40rem;
@@ -181,13 +228,11 @@ body {
 .button-green,
 .button-white {
     margin-top: 2rem;
-    margin-bottom: 5rem; /*temp*/
     padding: 15px 50px;
     text-decoration: none;
     border-radius: 5px;
-    text-decoration: none;
     color: var(--color-white);
-    transition: color 0.4s;
+    transition: all 0.4s;
 }
 
 .button-green {
@@ -218,9 +263,12 @@ body {
 
 .best-sellers {
     margin: 1rem 0;
+    margin-bottom: 2rem;
     text-align: center;
     letter-spacing: 3px;
 }
+
+/* SWIPER */
 
 .swiper {
     width: 100%;
@@ -233,23 +281,22 @@ body {
 
 .swiper-slide {
     display: flex;
-    
 }
 
 .sunglasses__inner {
+    margin: 0 2rem;
     position: relative;
     --swiper-navigation-sides-offset: -40px;
-    --swiper-navigation-color: var(--color-dark-grey);
+    --swiper-navigation-color: var(--color-dark-green);
+    --swiper-pagination-color: var(--color-light-green);
     --swiper-pagination-bottom: 0;
 }
-
 
 .sunglasses__slide {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* max-width: 400px; */
-    min-height: 350px;
+    min-height: 300px;
     padding: 25px;
     background-color: var(--color-white);
     border-radius: 5px;
@@ -264,28 +311,162 @@ body {
 }
 
 .sunglasses__price {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .sunglasses__button {
     padding: 5px 15px;
-    background-color: var(--color-light-green);
+    background-color: var(--color-dark-green);
     color: var(--color-white);
     border-radius: 5px;
     text-decoration: none;
+    transition: all 0.4s;
 }
 
-/* Swiper */
-
-.swiper-button-prev,
-.swiper-button-next {
-    stroke: var(--color-dark-grey);
+.sunglasses__button:hover {
+    background: var(--color-light-green);
 }
 
-.swiper-button-prev {
-    left: -40px;
+/* RESPONSIVE SECTION */
+
+/* 1650 PX */
+
+@media screen and (max-width: 1650px) {
+
+    .sunglasses__slide {
+        justify-content: space-evenly;
+    }
+
+    .hero {
+        background-position: center 0;
+    }
 }
 
-.swiper-button-next {
-    right: -40px;
+/* 1400 PX */
+
+@media screen and (max-width: 1400px) {
+
+    .sunglasses__slide {
+        padding: 10px;
+    }
+
+    .hero__title {
+        font-size: var(--font-size-6);
+        max-width: 50rem;
+    }
+    
+    .hero__ingress {
+        font-size: var(--font-size-1);
+        max-width: 30rem;
+    }
+
+    .button-green,
+    .button-white {
+        padding: 10px 30px;
+    }
+}
+
+/* 1200 PX */
+
+@media screen and (max-width: 1200px) {
+
+
+    .hero__title {
+        font-size: var(--font-size-5);
+        max-width: 37rem;
+    }
+
+    .hero__ingress {
+        max-width: 22rem;
+    }
+}
+
+/* 1024 PX */
+
+@media screen and (max-width: 1024px) {
+
+    .site-header .menu,
+    .site-header .icons {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+        border: none;
+        background: none;
+        z-index: 99;
+        cursor: pointer;
+    }
+
+    .hero__content {
+        margin-top: 7rem;
+    }
+    
+    .hero__ingress {
+        max-width: 20rem;
+    }
+
+    .hero__buttons {
+        gap: 1rem;
+    }
+
+    .button-green,
+    .button-white {
+        padding: 10px 20px;
+    }
+
+}
+
+/* 900 PX */
+
+@media screen and (max-width: 900px) {
+
+    .hero__title {
+        max-width: 28rem;
+    }
+
+    /* Ändra sunglasses slides antal visningar per sida */
+}
+
+
+/* 550 PX */
+
+@media screen and (max-width: 550px) {
+
+    /* .hero__content{
+        margin-top: 2rem;
+        margin-left: 1rem;
+    } */
+
+    .site-header {
+        padding: 0 32px;
+    }
+
+    .hero__title {
+        font-size: var(--font-size-4);
+        max-width: 20rem;
+    }
+
+    .hero__ingress {
+        font-size: 16px;
+        margin-top: 1.5rem;
+    }
+
+    .hero__buttons {
+        flex-direction: column;
+        max-width: 170px;
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .button-green,
+    .button-white {
+        margin-top: 0;
+    }
+}
+
+/* 400 PX */
+
+@media screen and (max-width: 400px) {
+
 }
